@@ -1,0 +1,20 @@
+{
+  "name": "contender_emailer_server",
+  "version": "1.0.0",
+  "description": "sends emails",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Sam Segal",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.7.3"
+  }
+}
