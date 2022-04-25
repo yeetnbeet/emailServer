@@ -7,7 +7,7 @@ const nodemailer = require('nodemailer')
 
 const transport = {
     //this is the authentication for sending email.
-host: 'smtp.gmail.com',
+host: 'smtp-relay.gmail.com',
 port: 465,
 secure: true, // use TLS
 //create a .env file and define the process.env variables 
