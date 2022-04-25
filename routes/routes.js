@@ -38,7 +38,7 @@ router.post('/', (req, res, next) => {
     const mail = {
     from: process.env.SMTP_FROM_EMAIL,
     to: process.env.SMTP_TO_EMAIL,
-    subject: 'New Contact Form Submission',
+    subject: 'Bike Sizer',
     text: `
       from:
       ${req.body.name}
