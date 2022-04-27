@@ -39,24 +39,22 @@ router.post('/', (req, res, next) => {
     from: process.env.SMTP_FROM_EMAIL,
     to: req.body.Email,
     subject: 'Bike Sizer',
-    text: `
-      from:
-      Contender Bicycles
+    html: `
+      <h3>Thank you for using the Contender Bicycles bike sizer. Below are the results from your input into the sizer. Please note these measurements are in cm.</h3>
+      <h2>details</h2>
 
-      details
+      <h3>Saddle Height: ${req.body.SaddleHeight} cm</h3>      
+      <h3>Minimum Reach: ${req.body.ReachMin} cm</h3>
+      <h3>Maximum Reach: ${req.body.ReachMax} cm</h3>      
+      <h3>Stack Height:  ${req.body.StackHeight} cm</h3>
 
-      Saddle Height: ${req.body.SaddleHeight}      
-      Minimum Reach: ${req.body.ReachMin}
-      Maximum Reach: ${req.body.ReachMax}      
-      Stack Height:  ${req.body.StackHeight}
+      <h2>Rider Stats</h2>
 
-      Rider Stats
-
-      Height: ${req.body.Height}
-      Torso Length: ${req.body.Torso} 
-
-      message:
-      ${req.body.message}`,
+      <h3>Height: ${req.body.Height} cm</h3>
+      <h3>Torso Length: ${req.body.Torso} cm</h3> 
+      <p>Contender Bicycles is devoted to providing the best bike shop experience possible for those who are passionate about cycling. If you have any additional questions or would like further assistance in sizing, please email us at info@contenderbicycles.com or call us at (801) 364-0344. 
+      </p>
+      `,
     }
     transporter.sendMail(mail, (err, data) => {
         if (err) {
