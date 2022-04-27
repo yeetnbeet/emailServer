@@ -39,8 +39,13 @@ router.post('/', (req, res, next) => {
     from: process.env.SMTP_FROM_EMAIL,
     to: req.body.Email,
     subject: 'Bike Sizer',
+    attachments: [{
+        filename:'Contender-Bicycles-Logo.jpeg',
+        path:'routes/Contender-Bicycles-Logo.jpeg',
+        cid:'logo'
+    }],
     html: `
-      <img src='https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0483%2F9040%2F6312%2Ffiles%2Fcontender-logo.png%3Fheight%3D628%26pad_color%3Dfff%26v%3D1614105490%26width%3D1200&imgrefurl=https%3A%2F%2Fcontenderbicycles.com%2F&tbnid=wtvH-WjOEVV9uM&vet=12ahUKEwjPpZOt_LT3AhVcFzQIHTCFCfEQMygAegUIARCsAQ..i&docid=-AIHG03kHjmtxM&w=1200&h=628&q=contender%20bikes&ved=2ahUKEwjPpZOt_LT3AhVcFzQIHTCFCfEQMygAegUIARCsAQ'></img>
+      <img src="cid:logo">
       <p>Thank you for using the Contender Bicycles bike sizer. Below are the results from your input into the sizer. Please note these measurements are in cm.</p>
       <div></div>
       <p>Details:</p>
