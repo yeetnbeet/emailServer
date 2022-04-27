@@ -44,8 +44,16 @@ router.post('/', (req, res, next) => {
       Contender Bicycles
 
       details
-      Saddle Height: ${req.body.SaddleHeight}
-      phone: 999 999 9999
+
+      Saddle Height: ${req.body.SaddleHeight}      
+      Minimum Reach: ${req.body.ReachMin}
+      Maximum Reach: ${req.body.ReachMax}      
+      Stack Height:  ${req.body.StackHeight}
+
+      Rider Stats
+
+      Height: ${req.body.Height}
+      Torso Length: ${req.body.Torso} 
 
       message:
       ${req.body.message}`,
