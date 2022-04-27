@@ -7,7 +7,7 @@ const nodemailer = require('nodemailer')
 
 const transport = {
     //this is the authentication for sending email.
-host: 'smtp-relay.gmail.com',
+host: 'smtp.gmail.com',
 port: 465,
 secure: true, // use TLS
 //create a .env file and define the process.env variables 
@@ -37,7 +37,7 @@ router.post('/', (req, res, next) => {
     //make mailable object
     const mail = {
     from: process.env.SMTP_FROM_EMAIL,
-    to: "samcontendertest@gmail.com",
+    to: "sam@contenderbicycles.com",
     subject: 'Bike Sizer',
     text: `
       from:
@@ -54,6 +54,7 @@ router.post('/', (req, res, next) => {
         if (err) {
             res.json({
                 status: 'fail',
+                message: err
             })
         } else {
             res.json({
