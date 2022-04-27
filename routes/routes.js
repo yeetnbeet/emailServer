@@ -40,18 +40,21 @@ router.post('/', (req, res, next) => {
     to: req.body.Email,
     subject: 'Bike Sizer',
     html: `
-      <h3>Thank you for using the Contender Bicycles bike sizer. Below are the results from your input into the sizer. Please note these measurements are in cm.</h3>
-      <h2>details</h2>
+      <img src='https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0483%2F9040%2F6312%2Ffiles%2Fcontender-logo.png%3Fheight%3D628%26pad_color%3Dfff%26v%3D1614105490%26width%3D1200&imgrefurl=https%3A%2F%2Fcontenderbicycles.com%2F&tbnid=wtvH-WjOEVV9uM&vet=12ahUKEwjPpZOt_LT3AhVcFzQIHTCFCfEQMygAegUIARCsAQ..i&docid=-AIHG03kHjmtxM&w=1200&h=628&q=contender%20bikes&ved=2ahUKEwjPpZOt_LT3AhVcFzQIHTCFCfEQMygAegUIARCsAQ'></img>
+      <p>Thank you for using the Contender Bicycles bike sizer. Below are the results from your input into the sizer. Please note these measurements are in cm.</p>
+      <div></div>
+      <p>Details:</p>
 
-      <h3>Saddle Height: ${req.body.SaddleHeight} cm</h3>      
-      <h3>Minimum Reach: ${req.body.ReachMin} cm</h3>
-      <h3>Maximum Reach: ${req.body.ReachMax} cm</h3>      
-      <h3>Stack Height:  ${req.body.StackHeight} cm</h3>
+      <li>Saddle Height: ${req.body.SaddleHeight} cm</li>      
+      <li>Minimum Reach: ${req.body.ReachMin} cm</li>
+      <li>Maximum Reach: ${req.body.ReachMax} cm</li>      
+      <li>Stack Height:  ${req.body.StackHeight} cm</li>
+      <div></div>  
+      <p>Rider Stats:</p>
 
-      <h2>Rider Stats</h2>
-
-      <h3>Height: ${req.body.Height} cm</h3>
-      <h3>Torso Length: ${req.body.Torso} cm</h3> 
+      <li>Height: ${req.body.Height} cm</li>
+      <li>Torso Length: ${req.body.Torso} cm</li> 
+      <div></div>
       <p>Contender Bicycles is devoted to providing the best bike shop experience possible for those who are passionate about cycling. If you have any additional questions or would like further assistance in sizing, please email us at info@contenderbicycles.com or call us at (801) 364-0344. 
       </p>
       `,
