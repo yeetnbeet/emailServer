@@ -37,15 +37,15 @@ router.post('/', (req, res, next) => {
     //make mailable object
     const mail = {
     from: process.env.SMTP_FROM_EMAIL,
-    to: "sam@contenderbicycles.com",
+    to: req.body.Email,
     subject: 'Bike Sizer',
     text: `
       from:
-      ${req.body.name}
+      Contender Bicycles
 
-      contact details
-      email: ${req.body.email}
-      phone: ${req.body.tel}
+      details
+      Saddle Height: ${req.body.SaddleHeight}
+      phone: 999 999 9999
 
       message:
       ${req.body.message}`,
