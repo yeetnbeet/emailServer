@@ -1,6 +1,7 @@
 const express = require('express')
 const cluster = require('cluster')
 const numCPUs = require('os').cpus().length
+var cors = require('cors')
 
 const isDev = process.env.NODE_ENV !== 'production'
 
@@ -36,7 +37,7 @@ else{
    
     // dev middleware
     app.use(morgan('dev'))
-   
+    app.use(cors())
     // configure body parser for AJAX requests
     app.use(express.urlencoded({ extended: false }))
     app.use(express.json())
