@@ -45,7 +45,7 @@ router.post('/', (req, res, next) => {
         cid:'logo'
     }],
     html: `
-      <img src="cid:logo">
+      <img style='max-width: 25%; height: auto;' src="cid:logo">
       <p>Thank you for using the Contender Bicycles bike sizer. Below are the results from your input into the sizer. Please note these measurements are in cm.</p>
       <div></div>
       <p>Details:</p>
